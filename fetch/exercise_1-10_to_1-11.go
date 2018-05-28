@@ -31,7 +31,7 @@ func check(e error) {
 
 func main() {
 
-	f, err := os.Create("exercise_1-10_output.txt")
+	f, err := os.Create("fetch/exercise_1-10_output.txt")
 	check(err)
 	defer f.Close()
 	w := bufio.NewWriter(f)
