@@ -1,6 +1,9 @@
 package main
 
-// Modify dup2 to print the names of all files in which each duplicated line occurs.
+/*
+ * EXERCISE 1.4
+ * Modify dup2 to print the names of all files in which each duplicated line occurs.
+ */
 
 import (
 	"os"
@@ -8,18 +11,6 @@ import (
 	"bufio"
 	"strings"
 )
-
-
-// ====================================================================
-// EXAMPLE OUTPUT
-// ====================================================================
-// 9       We are legion - .../exercises/duplicates.txt
-// 4       The fantastic four - .../exercises/more_duplicates.txt
-// 6       We are legion - .../exercises/more_duplicates.txt
-// 2       This is a duplicate line - .../exercises/duplicates.txt
-// 3       This line is a triplet - .../exercises/duplicates.txt
-// ____________________________________________________________________
-
 
 func main() {
 	counts := make(map[string]int)
@@ -55,3 +46,15 @@ func countLines(f *os.File, counts map[string]int) {
 		counts[strings.Join([]string{input.Text(), fileName}, sep)]++
 	}
 }
+
+/*
+====================================================================
+						EXAMPLE OUTPUT
+====================================================================
+
+9       We are legion - .../exercises/duplicates.txt
+4       The fantastic four - .../exercises/more_duplicates.txt
+6       We are legion - .../exercises/more_duplicates.txt
+2       This is a duplicate line - .../exercises/duplicates.txt
+3       This line is a triplet - .../exercises/duplicates.txt
+ */

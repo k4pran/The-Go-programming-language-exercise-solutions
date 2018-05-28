@@ -1,7 +1,10 @@
 package main
 
-/* Experiment to measure the difference in running time between our potentially inefficient versions and the one
- that uses string.join. */
+/*
+ * EXERCISE 1.3
+ * Experiment to measure the difference in running time between our potentially inefficient versions and the one
+ * that uses string.join.
+*/
 
 import (
 	"fmt"
@@ -25,9 +28,9 @@ func main() {
 	new_performance := time.Since(start_new)
 
 	// Report results
-	fmt.Println("==========================================")
+	fmt.Println("------------------------------------------")
 	fmt.Println("                 RESULTS")
-	fmt.Println("==========================================")
+	fmt.Println("------------------------------------------")
 	fmt.Println("\t-Original timing: " + original_performance.String())
 	fmt.Println("\t-New performance: " + new_performance.String() + "\n")
 
@@ -67,3 +70,18 @@ func ex_1_join() {
 	}
 	fmt.Println(s)
 }
+
+/*
+====================================================================
+						EXAMPLE OUTPUT
+====================================================================
+
+
+------------------------------------------
+                 RESULTS
+------------------------------------------
+        -Original timing: 37.706µs
+        -New performance: 3.078µs
+
+--The new method using string.Join is faster by 34.628µs--
+ */
